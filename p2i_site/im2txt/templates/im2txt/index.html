@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="static/css/index.css" rel="stylesheet">
+    
+
+    <title>ML img2ingredient</title>
+
+
+</head>
+<body>
+    <!-- <h2>File Upload & Image Preview</h2> -->
+    <!-- <p class="lead">No Plugins <b>Just Javascript</b></p> -->
+
+    <!-- Upload  -->
+    <form id="file-upload-form" class="uploader" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <div class="wrap">
+            <div class="thumb"> <img id="img" src={{img_path}}/></div>
+                     <label for="upload">CHOOSE PICTURE
+                       <input type='file' id="upload" name="myfile" multiple></label>
+                       <!-- <input type="file"  name="myfile" multiple> -->
+                       <button type="submit"  name="upload">UPLOAD</button>
+                       <div><font color="white">{{caption}}</font></div>
+        </div>
+        <div style="font-size: 12px;  text-align: center;  color: #666;  background:rgba(0,0,0,0.1);  width: 100vw;  position: absolute;  bottom: 2px;  opacity: 0.5;">Follow me on <a href="https://twitter.com/nodws" target="_b" style="color: #999">Twitter</a> new <a href="http://codepen.com/nodws" target="_b" style="color: #999">Pen</a> each week</div>
+    </form>
+    <!-- <div class="wrap">
+            <div class="thumb"> <img id="img" src="https://placeimg.com/300/300/people"/></div>
+            <form action="">
+             <label for="upload">CHANGE AVATAR
+               <input type='file' id="upload"></label>
+         
+           </form>
+           
+         </div>
+         <div style="font-size: 12px;  text-align: center;  color: #666;  background:rgba(0,0,0,0.1);  width: 100vw;  position: absolute;  bottom: 2px;  opacity: 0.5;">Follow me on <a href="https://twitter.com/nodws" target="_b" style="color: #999">Twitter</a> new <a href="http://codepen.com/nodws" target="_b" style="color: #999">Pen</a> each week</div> -->
+
+    <script src="static/js/index.js"></script>
+</body>
+</html>
